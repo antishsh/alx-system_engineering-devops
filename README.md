@@ -1,1 +1,11 @@
-
+CREATE DATABASE IF NOT EXISTS tyrell_corp;
+USE tyrell_corp;
+CREATE TABLE IF NOT EXISTS nexus6 (id INT UNIQUE NOT NULL AUTO_INCREMENT, name VARCHAR(256) NOT NULL, PRIMARY KEY(id));
+CREATE USER IF NOT EXISTS holberton_user@localhost;
+INSERT INTO nexus6 VALUES(1, 'Leon');
+SET PASSWORD FOR holberton_user@localhost = 'projectcorrection280hbtn';
+GRANT SELECT ON hbtn_0d_2.* TO tyrell_corp.* TO holberton_user@localhost;
+GRANT ALL PRIVILEGES ON holberton_user . * TO holberton_user@localhost;
+GRANT SELECT ON performance_schema . * TO holberton_user@localhost;
+GRANT REPLICATION CLIENT ON *.* TO 'holberton_user'@'localhost';
+FLUSH PRIVILEGES;
